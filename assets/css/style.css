@@ -1,0 +1,81 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;800&display=swap');
+:root{
+  --gold:#c49a57;
+  --gold-2:#b5833a;
+  --dark:#2f2f2f;
+  --glass: rgba(255,255,255,0.12);
+  --card: rgba(255,255,255,0.72);
+  --overlay: rgba(15,15,15,0.45);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:'Tajawal',Tajawal, Arial, sans-serif;background:#111;color:var(--dark);direction:rtl}
+body{
+  background-image: url('../images/b.webp');
+  background-size:cover;
+  background-attachment: fixed;
+  background-position:center;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+.overlay{position:fixed;inset:0;background:var(--overlay);pointer-events:none;z-index:0}
+
+/* App layout */
+.app{position:relative;min-height:100vh;display:flex;z-index:1}
+.sidebar{width:340px;padding:24px;background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));backdrop-filter:blur(6px);border-left:1px solid rgba(255,255,255,0.06);color:#0c0c0c;display:flex;flex-direction:column;gap:20px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:64px;height:64px;border-radius:10px;object-fit:cover;box-shadow:0 10px 30px rgba(0,0,0,0.4)}
+.brand h2{margin:0;font-size:20px;color:var(--gold);font-weight:800}
+.nav{display:flex;flex-direction:column;gap:8px}
+.nav button{background:transparent;border:none;color:rgba(3, 3, 3, 0.95);padding:12px 10px;border-radius:8px;text-align:right;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.nav button:hover{background:rgba(255,255,255,0.03)}
+.submenu{margin-top:6px;margin-bottom:6px;padding:10px 6px;border-radius:8px;background:rgba(0,0,0,0.12);display:none;flex-direction:column;gap:8px}
+.submenu.open{display:flex}
+.submenu .item{display:flex;gap:10px;align-items:center}
+.submenu img{width:56px;height:40px;object-fit:cover;border-radius:6px;box-shadow:0 6px 20px rgba(0,0,0,0.3)}
+
+/* main */
+.main{flex:1;padding:28px;display:flex;flex-direction:column;gap:18px;overflow:auto}
+.header{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#070707}
+.header .user{display:flex;align-items:center;gap:12px}
+.user .avatar{width:44px;height:44px;border-radius:8px;background:var(--card);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--dark)}
+
+/* cards */
+.card{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 8px 30px rgba(2,6,23,0.4);backdrop-filter:blur(6px)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:12px}
+
+/* est card */
+.est-card{display:flex;flex-direction:column;gap:10px}
+.meta{display:flex;justify-content:space-between;align-items:center}
+.status{padding:6px 10px;border-radius:999px;font-weight:800}
+.status.ok{background:rgba(196,154,87,0.12);color:var(--gold-2);border:1px solid rgba(196,154,87,0.25)}
+.status.warn{background:rgba(255,200,0,0.08);color:#9a5c00;border:1px solid rgba(255,200,0,0.1)}
+
+.uploader{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.file-list{margin-top:10px;display:flex;flex-direction:column;gap:8px}
+
+/* footer */
+.footer{margin-top:18px;text-align:center;color:rgba(10, 9, 9, 0.9);font-size:14px;padding:18px}
+
+/* login page */
+.login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px}
+.login-card{width:520px;background:linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.06));backdrop-filter:blur(8px);border-radius:14px;padding:22px;border:1px solid rgba(255,255,255,0.06);color:#fff}
+.login-card h1{margin:0 0 8px 0;color:var(--gold);font-size:24px}
+.form-group{margin-bottom:12px}
+input[type="text"],input[type="password"]{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:#030303}
+.btn{background:linear-gradient(180deg,var(--gold),var(--gold-2));border:none;padding:10px 14px;border-radius:10px;color:#030303;font-weight:800;cursor:pointer}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.12);color:#090909}
+
+/* PPE gallery */
+.ppe-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.ppe-card{background:rgba(5, 5, 5, 0.9);padding:8px;border-radius:8px;text-align:center;color:var(--dark)}
+
+/* responsive */
+@media(max-width:1000px){
+  .sidebar{display:none}
+  .login-card{width:92%}
+  .app{flex-direction:column}
+}
+
+/* small helper */
+.small{font-size:13px;color:rgba(0,0,0,0.6)}

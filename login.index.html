@@ -1,0 +1,40 @@
+
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>منصة المفتشين الموحد - تسجيل الدخول</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="login-wrap">
+    <div class="login-card card">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
+        <img src="assets/images/b.webp" style="width:72px;height:72px;border-radius:10px;object-fit:cover;box-shadow:0 10px 30px rgba(0,0,0,0.5)">
+        <div>
+          <h1>منصة المفتشين الموحد</h1>
+          <div class="small">نظام متكامل لمتابعة معايير السلامة والصحة المهنية</div>
+        </div>
+      </div>
+      <form onsubmit="login(event)">
+        <div class="form-group">
+          <label>اسم المستخدم</label>
+          <input id="username" type="text" placeholder="اسم المستخدم">
+        </div>
+        <div class="form-group">
+          <label>كلمة المرور</label>
+          <input id="password" type="password" placeholder="كلمة المرور">
+        </div>
+        <div style="display:flex;gap:12px;justify-content:flex-end;margin-top:12px">
+          <button class="btn" type="submit">دخول</button>
+          <button type="button" class="btn ghost" onclick="document.getElementById('username').value='lama';document.getElementById('password').value='12345'">تعبئة سريعة</button>
+        </div>
+      </form>
+      <div style="margin-top:12px;text-align:center;color:rgba(6, 6, 6, 0.8)">بإشراف المدربة / لمى العتيبي</div>
+    </div>
+  </div>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
